@@ -46,10 +46,20 @@ a:hover, a:active {
   background-color: rgb(253, 228, 207);
   color: rgb(255, 109, 73);
   font-size: 1vw;
+  margin-bottom: 0px;
   bottom: 0px;
-  position: sticky;
+  position: fixed;
 }
 
 .shopItems {
   text-align: center;
+  margin-bottom: 17vh;
+}
+
+.itemDetail {
+  text-align: center;
+  
+}
+.fullApp {
+  max-width: 100vw;
 }

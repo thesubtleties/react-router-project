@@ -1,12 +1,15 @@
 import React, {useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Shop from './components/Shop';
+import Shopmain from './components/Shopmain';
 import Cart from './components/Cart';
+import Itempage from './components/Itempage';
 import './App.css';
 
 function App() {
+  
   const placeholderItems = [
     {
       name: "Hat",
@@ -57,7 +60,7 @@ function App() {
     setCart([]);
   }
   return (
-    <div>
+    <div className="fullApp">
     
     <Router>
     <Navbar />
@@ -70,6 +73,9 @@ function App() {
       </Route>
       <Route exact path="/cart">
         <Cart />
+      </Route>
+      <Route exact path="/shop/:id">
+      <Itempage items={placeholderItems}  />
       </Route>
     </Switch>
       
