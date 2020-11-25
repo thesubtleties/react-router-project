@@ -1,38 +1,55 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a:visited {
+  text-decoration: none;
+  color: rgb(255, 109, 73);
+}
+a:hover {
+  text-decoration: none;
+  color: rgb(255, 109, 73);
+}
+a:focus {
+  text-decoration: none;
+  color: rgb(255, 109, 73);
+}
+a:hover, a:active {
+  text-decoration: none;
+  color: rgb(255, 109, 73);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Topbar {
+  width: 100vw;
+  height: 5vh;
+  background-color: rgb(253, 228, 207);
+  color: rgb(255, 109, 73);
+  font-size: 2vw;
+}
+.CartLink {
+  float: right;
+  margin-right: 1vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Logo {
+  float: left; 
 }
 
-.App-link {
-  color: #61dafb;
+.HomeText {
+  text-align: center;
+  margin-top: 15vh;
+  font-size: 2vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Cartbar {
+  width: 100vw;
+  height: 15vh;
+  background-color: rgb(253, 228, 207);
+  color: rgb(255, 109, 73);
+  font-size: 1vw;
+  bottom: 0px;
+  position: sticky;
+}
+
+.shopItems {
+  text-align: center;
 }
