@@ -43,12 +43,40 @@ function App() {
     }
   ];
 
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([1]);
   const getItemNumber = (event) => {
 
   }
-
+//THIS IS WHERE WE NEED TO START NEXT. If item is in cart, we find the item in the array and we add 1 to the quantity. If item is not in cart, we add item to cart and then set quantity to 1. We will edit this to copy over to make either +1 -1 buttons or an input field that allows us to manually type in a number to quantity.
   const addToCart = (event) => {
+    console.log(event);
+    const itemId = event.target.id;
+    console.log(itemId)
+    const item = [{ }];
+    if (cart.find(item => item.id === itemId)) {
+      console.log("found")
+      
+      
+    } else {
+      console.log("not found")
+      setCart(oldCart => {
+        return (
+          
+            [...oldCart,
+            {
+              ...item,
+              quantity: 1
+            }
+          ]
+          
+        )
+      })
+      console.log(cart);
+
+    }
+
+
+
 
   }
 

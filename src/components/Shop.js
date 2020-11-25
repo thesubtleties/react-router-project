@@ -11,7 +11,7 @@ function Shop(props) {
     <div>
     
   
-    <Shopmain items={props.items} />
+    <Shopmain addToCart={props.addToCart} items={props.items} />
 
     <Cartbar />
 

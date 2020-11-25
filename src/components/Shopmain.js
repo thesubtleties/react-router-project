@@ -13,7 +13,7 @@ function Shopmain(props) {
       <h3>${item.price}</h3>
       </div>
       </Link>
-      <h4>Add to Cart</h4>
+      <button id={item.id} onClick={props.addToCart}>Add to Cart</button>
       </div>
     ))}
     </div>
