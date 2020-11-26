@@ -13,7 +13,7 @@ function Shop(props) {
   
     <Shopmain addToCart={props.addToCart} items={props.items} />
 
-    <Cartbar />
+    <Cartbar cart={props.cart} />
 
     </div>
   );
