@@ -49,34 +49,36 @@ function App() {
   }
 //THIS IS WHERE WE NEED TO START NEXT. If item is in cart, we find the item in the array and we add 1 to the quantity. If item is not in cart, we add item to cart and then set quantity to 1. We will edit this to copy over to make either +1 -1 buttons or an input field that allows us to manually type in a number to quantity.
   const addToCart = (event) => {
+    console.log(event)
+    event.preventDefault();
     const itemId = parseInt(event.target.id);
     const item = placeholderItems.find(oneItem => oneItem.id === itemId);
-    console.log(cart)
-    if (cart.find(item => item.id === itemId)) {
+    const newCart = cart;
+    if (newCart.find(item => item.id === itemId)) {
       console.log("found")
-      setCart(oldCart => {
-        const newCart = oldCart;
+      setCart(() => {
         const cartIndex = newCart.findIndex(ourItem => ourItem.id === itemId);
-        console.log(newCart.[cartIndex].quantity)
+        console.log(newCart[cartIndex].quantity)
+        const newQuantity = newCart[cartIndex].quantity + 1;
         newCart[cartIndex] = {
           ...item,
-          quantity: newCart[cartIndex].quantity + 1,
+          quantity: newQuantity
 
         }
-        ///WHY IS THIS ADDING TWO INSTEAD OF ONE!?
-        console.log(newCart.[cartIndex].quantity)
-        console.log(newCart)
+        ///WHY IS THIS ADDING TWO INSTEAD OF ONE!? is the event firing twice??? 
+        console.log(newCart[cartIndex].quantity)
         return (
         [
           ...newCart
         ]
-        )
+      )
+        
       }); 
       
     } else {
       console.log("not found")
-      setCart(oldCart => {
-        const newCart = oldCart;
+      setCart(() => {
+        
         
         return (
           
