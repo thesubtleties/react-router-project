@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Cartbar from './Cartbar';
 
 function Itempage(props) {
   let { id } = useParams();
@@ -11,16 +10,14 @@ function Itempage(props) {
 
   return (
     <div className="itemDetail">
-    {console.log("here")}
     <div>
       <div>
       <h1>{ourSingleItem.name}</h1>
       <img src={`/${ourSingleItem.img}`} alt={ourSingleItem.name} width="240px" />
       <h3>${ourSingleItem.price}</h3>
       </div>
-      <h4>Add to Cart</h4>
+      <h4 id={ourSingleItem.id} onClick={props.addToCart}>Add to Cart</h4>
       </div>
-      <Cartbar />
     </div>
   );
 }
